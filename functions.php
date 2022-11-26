@@ -34,6 +34,9 @@ $custom_image_header = array(
 
 );
 
+/*featured <images--------*/
+
+
 add_theme_support('custom-header', $custom_image_header);
 
 add_theme_support('post-thumbnails');
@@ -41,29 +44,11 @@ add_theme_support('post-thumbnails');
 ?>
 
 
+<?php
 
+add_theme_support('custom-header', '$custom_image_header');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-add_theme_support('custom-header', $custom_image_header);
-
-
+/* Post Data Information */
 
 add_theme_support('post-thumbnails');
 
@@ -82,4 +67,42 @@ function post_data () {
 
 }
 
+/* Add menus to our theme*/
+
+function register_my_menus() {
+register_nav_menus(array (
+'main-menu' => -('Main Menu'),
+'footer-left' => -('Left Footer Menu'),
+'footer-middle' => -('Middle Footer Menu'),
+'footer-right' => -('Right Footer Menu')
+
+));
+
+}
+
+add_action('init', 'register_my_menus');
+
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
